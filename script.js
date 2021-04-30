@@ -1,15 +1,15 @@
 const numberOfFilm = prompt('Сколько фильмов вы уже посмотрели?', '');
 if(numberOfFilm<10) {
-    alert('Просмотрено довольно мало фильмов');
+    console.log('Просмотрено довольно мало фильмов');
 }
 else if (numberOfFilm>10 && numberOfFilm<30) {
-    alert('Вы классический зритель');
+    console.log('Вы классический зритель');
 }
 else if (numberOfFilm>30) {
-    alert('Вы киноман');
+    console.log('Вы киноман');
 }
 else {
-    alert('Произошла ошибка');
+    console.log('Произошла ошибка');
 }
 const personalMovieDB = {
     count: numberOfFilm,
@@ -21,7 +21,8 @@ const personalMovieDB = {
 for(let i = 0; i< personalMovieDB.count; i++)
 {
     let a = prompt(`Введите название ${i+1} фильма`,'');
-    while (a.length===0 || a.length>50){
+    while (a.length===0 || a.length>50 || a===null){
+        console.log('error in film name lenght');
         a = prompt(`Введите название ${i+1} фильма`,'');
     }
     const b = prompt('На сколько вы оцените его?');
