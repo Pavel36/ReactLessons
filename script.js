@@ -1,6 +1,6 @@
 'use strict';
 
-let numberOfFilm = prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilm;
 function start() {
     numberOfFilm = +prompt('Сколько фильмов вы уже посмотрели?', '');
     while(numberOfFilm == '' || numberOfFilm == null || isNaN(numberOfFilm)) {
@@ -46,7 +46,20 @@ function detectPersonalLevel() {
     }
 }
 detectPersonalLevel();
-console.log(personalMovieDB);
+
+function showMyDB(hidden) {
+    if(!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres(genreDB) {
+    for(let i = 0; i < 3; i++) {
+        genreDB.push(prompt(`Ваш любимый жанр под номером ${i+1}`));
+    }
+}
+writeYourGenres(personalMovieDB.genres);
 
 
 
